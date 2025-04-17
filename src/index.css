@@ -30,7 +30,7 @@
     @apply w-full h-full scroll-smooth;
   }
   body{
-    @apply w-full h-full font-sans;
+    @apply w-full h-full font-mono font-bold uppercase text-5xl flex flex-col;
   }
 
 }
