@@ -7,12 +7,14 @@ import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
 import Users from './components/pages/Users/Users';
 import Detail from './components/Component/Detail/Detail';
+import ErrorPage from './components/pages/ErrorPage/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/about',

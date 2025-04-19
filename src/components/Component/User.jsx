@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 const User = ({user}) => {
     const navigate = useNavigate();
     const{name, email, phone, id }=user;
+
+
     const detailHandler = (e) => {
         e.preventDefault();
         navigate(`/users/${id}`)
     }
+
     return (
         <div className='w-full flex flex-col items-center justify-between bg-yellow-500 rounded-md shadow-md inset-0 text-yellow-50'>
             <div>

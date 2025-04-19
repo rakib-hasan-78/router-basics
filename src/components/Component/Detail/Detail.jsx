@@ -1,10 +1,13 @@
 import React from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 
 const Detail = () => {
     const user = useLoaderData();
     const navigate = useNavigate()
     const {name, company: { name: companyName } } = user;
+
+    const {userId} = useParams();
+    console.log(userId);
 
     const backHandler = (e)=>{
         e.preventDefault();
@@ -16,6 +19,7 @@ const Detail = () => {
             <div className='w-full h-auto flex-col flex items-center justify-center border p-5 rounded-2xl shadow-2xl'>
             <div className='flex items-start justify-center flex-col w-full p-1'>
                 <h5 className='text-base'>Name: <small>{name}</small> </h5>
+                <p className='text-sm'>Searched ID: <small>{userId}</small></p>
                 <p className='text-base'>Company Name: <small>{companyName}</small></p>
             </div>
             <button
