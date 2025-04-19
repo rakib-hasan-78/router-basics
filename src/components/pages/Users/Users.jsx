@@ -4,7 +4,7 @@ import User from '../../Component/User';
 
 const Users = () => {
     const data = useLoaderData();
-    console.log(data)
+
     return (
         <div className='w-full flex flex-col items-center justify-center'>
             <h1 className='w-full text-center my-12 text-3xl text-pink-400'>we have users: {data.length}</h1>
