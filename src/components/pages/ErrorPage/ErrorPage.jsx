@@ -1,24 +1,26 @@
-// import React from 'react';
-
-import { useNavigate, useRouteError } from "react-router-dom";
+import { useRouteError, useNavigate } from "react-router-dom";
 
 const ErrorPage = () => {
-    const {data, error:{message}, status, statusText} = useRouteError();
+    const error = useRouteError();
+    const navigate = useNavigate();
 
-    const returnRoute = useNavigate();
-    const backHandler = (e) => {
-        e.preventDefault();
-        returnRoute(-1);
-    }
+    const backHandler = () => navigate(-1);
+
     return (
-        <div>
-            <h2>ooopps...!</h2>
-            <p><small>{status}-{statusText}</small></p>
-            <p>{message || data}</p>
+        <div className="p-5 text-center">
+            <h2 className="text-2xl text-red-600 font-bold mb-3">Oops! Something went wrong</h2>
+            <p className="mb-2 text-gray-700">
+                {error.status}
+            </p>
+            <p className="mb-4">
+                {error.data || error.message || "Unknown error occurred"}
+            </p>
             <button
-            className="uppercase p-3 border border-white m-5 rounded-sm bg-gray-400 text-gray-100"
-            onClick={backHandler}
-             type="button">go back</button>
+                onClick={backHandler}
+                className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"
+            >
+                Go Back
+            </button>
         </div>
     );
 };

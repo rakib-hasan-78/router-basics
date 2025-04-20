@@ -34,3 +34,11 @@
   }
 
 }
+@layer utilities {
+  .active {
+    @apply bg-zinc-500 py-1.5 px-3;
+  }
+  .pending{
+    @apply bg-stone-600 py-1.5 px-3;
+  }
+}
